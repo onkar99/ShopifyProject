@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import testPages.HomePage;
 import testPages.cartPage;
@@ -39,7 +40,10 @@ public class BundleTest {
 		
 		checkPg.addDetails();
 		
-				
+		String finalMessage = checkPg.verifyMessage();		
+		finalMessage.trim();
+                Assert.assertEquals(finalMessage, "Thank you!");
+		
 		
 		
 		
