@@ -2,6 +2,8 @@ package testScripts;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
 import testPages.HomePage;
 import testPages.cartPage;
 import testPages.checkoutPage;
@@ -33,6 +35,7 @@ public class QuantityTest {
 		
 		checkPg.addDetails();
 		String lastMsg = checkPg.verifyMessage();
+        	Assert.assertEquals(lastMsg, "Thank you!");
 
 	}
 
